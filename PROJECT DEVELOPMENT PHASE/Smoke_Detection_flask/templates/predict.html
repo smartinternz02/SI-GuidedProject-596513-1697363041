@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make a Prediction</title>
+    <style>
+        body {
+            background-image: url('/static/smoke2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color:white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: skyblue;
+            border-radius: 5px;
+        }
+
+        .button-container a {
+            margin-left: 5px;
+            text-decoration: none;
+            color: black; 
+            font-size: 20px;
+            padding:10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-left: 550px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin: 5px;
+            color: rgb(244, 243, 243);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+
+        input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #000;
+            padding: 5px;
+        }
+
+        .submit-button {
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            width:100px;
+            margin-left: -150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href='/'>Home</a>
+    </div>
+
+    <h1>Smoke Detection Prediction</h1>
+    <form action="/submit" method="POST">
+        <div style="display: inline;">
+            <div style="width: 45%; margin: 5px;">
+                <label for="temperature">Temperature[C]:</label>
+                <input type="text" id="temperature" name="temperature" placeholder="Temperature[C]">
+            </div>
+            <div style="width: 45%;margin: 5px;">
+                <label for="humidity">Humidity[%]:</label>
+                <input type="text" id="humidity" name="humidity" placeholder="Humidity[%]">
+            </div>
+            <div style="width: 45%; margin: 5px;">
+                <label for="tvoc">TVOC[ppb]:</label>
+                <input type="text" id="tvoc" name="tvoc" placeholder="TVOC[ppb]">
+            </div>
+            <div style="width: 45%; margin: 5px;">
+                <label for="raw_h2">Raw H2:</label>
+                <input type="text" id="raw_h2" name="raw_h2" placeholder="Raw H2">
+            </div>
+            <div style="width: 45%; margin: 5px;">
+                <label for="raw_ethanol">Raw Ethanol:</label>
+                <input type="text" id="raw_ethanol" name="raw_ethanol" placeholder="Raw Ethanol">
+            </div>
+            <div style="width: 45%; margin: 5px;">
+                <label for="pressure">Pressure[hPa]:</label>
+                <input type="text" id="pressure" name="pressure" placeholder="Pressure[hPa]">
+            </div>
+            <div style="width: 45%; margin: 5px;">
+                <label for="nco5">NC0.5:</label>
+                <input type="text" id="nco5" name="nc0_5" placeholder="NCO.5">
+            </div>
+            <div style="width: 45%; margin: 5px;">
+                <label for="cnt">CNT:</label>
+                <input type="text" id="cnt" name="cnt" placeholder="CNT">
+            </div>
+        </div>
+        <input class ="submit-button" type="submit" value="Submit">
+        
+    </form>
+</body>
+</html>
